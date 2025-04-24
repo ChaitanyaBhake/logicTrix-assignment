@@ -282,12 +282,10 @@ const WelcomeForm = () => {
                 Upload From Media Library
               </Button>
 
-              <div className="flex items-center my-4">
-                <Separator className="flex-grow" />
+              <div className=" my-4 w-[20%] mx-auto">
                 <span className="px-3 text-sm text-gray-500">
                   or
                 </span>
-                <Separator className="flex-grow" />
               </div>
 
               <Label
@@ -395,15 +393,15 @@ const WelcomeForm = () => {
                 />
               </div>
             ) : contentType === 'pre-approved' ? (
-                <div className="rounded-lg ">
-                  <Image
-                    src="/Frame 2865.png"
-                    width={500}
-                    height={500}
-                    alt="immage"
-                  />
-                </div>
-              ):null}
+              <div className="rounded-lg ">
+                <Image
+                  src="/Frame 2865.png"
+                  width={500}
+                  height={500}
+                  alt="immage"
+                />
+              </div>
+            ) : null}
             <p className="text-sm mt-2">
               Hi {'{1}'}, please find details in attached
               pdf as discussed over call and click on demo
