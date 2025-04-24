@@ -369,7 +369,8 @@ const WelcomeForm = () => {
         </div>
 
         {/* Preview Div */}
-        <div className="relative mt-6 p-4 bg-white rounded-md   w-[50%] h-fit ">
+        <div className="relative mt-6 p-4 bg-white rounded-md max-lg:w-full w-[50%] h-fit ">
+          
           {/* Logo */}
           <div className=" absolute z-99 h-8 w-8 rounded-full  flex items-center justify-center text-white">
             <Image
@@ -379,6 +380,7 @@ const WelcomeForm = () => {
               alt="whatsapp"
             />
           </div>
+
           <div className="relative ml-3 bg-white p-3 rounded-lg shadow-lg w-full">
             {contentType === 'document' ? (
               <div className="flex flex-col items-center justify-center p-6 bg-blue-50 rounded-lg">
@@ -410,7 +412,7 @@ const WelcomeForm = () => {
                 />
               </div>
             ) : null}
-            <p className="text-sm mt-2">
+            <p className="text-sm mt-2 ">
               Hi {'{1}'}, please find details in attached
               pdf as discussed over call and click on demo
               link to explore demo. id :demo password : 1289
