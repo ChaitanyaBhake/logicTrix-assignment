@@ -35,7 +35,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="">
+      <div className=" ">
         {/* Top Bar */}
         <div className="flex justify-between items-center p-4 border-b z-0">
           <h1 className="text-xl font-semibold">
@@ -50,7 +50,7 @@ export default function Home() {
         </div>
 
         {/* Background Hero  */}
-        <div className="relative p-6 max-w-7xl m-auto ">
+        <div className="relative  p-6 max-w-7xl m-auto ">
           {/* Hero Banner */}
           <div className="relative flex justify-between items-center ">
             <div>
@@ -77,7 +77,7 @@ export default function Home() {
             </div>
           </div>
 
-          <Card className="absolute w-[95%] border rounded-lg p-6 z-50">
+          <Card className="absolute max-lg:w-[90%] max-w-[95%]  border rounded-lg p-6 z-50 ">
             <div className="">
               {/* Opt-in Section */}
               <OptInOrOut
