@@ -241,7 +241,7 @@ const WelcomeForm = () => {
               <RadioGroup
                 value={contentType}
                 onValueChange={setContentType}
-                className="flex space-x-6 mt-2"
+                className="flex flex-wrap gap-4 mt-2"
               >
                 <div className="flex items-center space-x-2">
                   <RadioGroupItem value="text" id="text" />
