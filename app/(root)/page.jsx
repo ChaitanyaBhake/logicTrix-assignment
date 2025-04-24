@@ -77,7 +77,7 @@ export default function Home() {
             </div>
           </div>
 
-          <Card className="absolute max-lg:w-[90%] max-w-[95%]  border rounded-lg p-6 z-50 ">
+          <Card className="relative max-lg:w-[98%]  max-w-[100%]  border rounded-lg p-6 z-50 ">
             <div className="">
               {/* Opt-in Section */}
               <OptInOrOut
