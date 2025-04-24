@@ -18,7 +18,7 @@ import { Separator } from '@/components/ui/separator';
 import { Textarea } from '@/components/ui/textarea';
 import { Smile, Upload } from 'lucide-react';
 import Image from 'next/image';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const WelcomeForm = () => {
   const [messageType, setMessageType] = useState('regular');
@@ -55,6 +55,14 @@ const WelcomeForm = () => {
     updatedVariables[index][field] = newValue;
     setVariables(updatedVariables);
   };
+
+  useEffect(()=>{
+    if(messageType === "pre-approved"){
+        setContentType("image")
+    } else {
+        setContentType("text")
+    }
+  },[messageType])
 
   return (
     <>
