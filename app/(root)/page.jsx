@@ -38,7 +38,7 @@ export default function Home() {
       <div className=" ">
         {/* Top Bar */}
         <div className="flex justify-between items-center p-4 border-b z-0">
-          <h1 className="text-xl font-semibold">
+          <h1 className="text-xl font-semibold line-clamp-2">
             Opt-In Management
           </h1>
           <div className="flex gap-2">
