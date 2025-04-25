@@ -27,7 +27,6 @@ const WelcomeForm = () => {
   const [mediaUrl, setMediaUrl] = useState(
     'https://images.unsplash.com/photo-1637979910374-ce7e8736b670?q=80&w=1673&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
   );
-  const [isMediaUrlValid, setIsMediaValid] = useState(true)
 
   const [variables, setVariables] = useState([
     { name: '1', value: 'Mohit' },
@@ -56,6 +55,14 @@ const WelcomeForm = () => {
     updatedVariables[index][field] = newValue;
     setVariables(updatedVariables);
   };
+
+  useEffect(() => {
+    if (messageType === 'pre-approved') {
+      setContentType('image');
+    } else {
+      setContentType('text');
+    }
+  }, [messageType]);
 
   return (
     <>
@@ -387,7 +394,7 @@ const WelcomeForm = () => {
               </div>
             ) : contentType === 'image' ? (
               <div className="rounded-lg ">
-                {mediaUrl !== ''  ? (
+                {mediaUrl !== '' ? (
                   <img
                     src={mediaUrl}
                     width={500}
