@@ -25,8 +25,9 @@ const WelcomeForm = () => {
   const [contentType, setContentType] = useState('text');
   const [messageBody, setMessageBody] = useState('');
   const [mediaUrl, setMediaUrl] = useState(
-    'https://unsplash.com/photos/people-sitting-at-the-table-'
+    'https://images.unsplash.com/photo-1637979910374-ce7e8736b670?q=80&w=1673&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
   );
+  const [isMediaUrlValid, setIsMediaValid] = useState(true)
 
   const [variables, setVariables] = useState([
     { name: '1', value: 'Mohit' },
@@ -55,14 +56,6 @@ const WelcomeForm = () => {
     updatedVariables[index][field] = newValue;
     setVariables(updatedVariables);
   };
-
-  useEffect(()=>{
-    if(messageType === "pre-approved"){
-        setContentType("image")
-    } else {
-        setContentType("text")
-    }
-  },[messageType])
 
   return (
     <>
@@ -369,8 +362,7 @@ const WelcomeForm = () => {
         </div>
 
         {/* Preview Div */}
-        <div className="relative mt-6 p-4 bg-white rounded-md max-lg:w-full w-[50%] h-fit ">
-          
+        <div className="relative mt-6 p-4  rounded-md max-lg:w-full w-[50%] h-fit bg-white ">
           {/* Logo */}
           <div className=" absolute z-99 h-8 w-8 rounded-full  flex items-center justify-center text-white">
             <Image
@@ -395,21 +387,43 @@ const WelcomeForm = () => {
               </div>
             ) : contentType === 'image' ? (
               <div className="rounded-lg ">
-                <Image
-                  src="/Frame 2865.png"
-                  width={500}
-                  height={500}
-                  alt="immage"
-                />
+                {mediaUrl !== ''  ? (
+                  <img
+                    src={mediaUrl}
+                    width={500}
+                    height={100}
+                    alt="Add a valid image link"
+                    className="w-full rounded-xl h-[320px] object-cover"
+                  />
+                ) : (
+                  <img
+                    src="/Frame 2865.png"
+                    width={500}
+                    height={100}
+                    alt="fallback image"
+                    className="w-full rounded-xl h-[320px] object-cover"
+                  />
+                )}
               </div>
             ) : contentType === 'pre-approved' ? (
-              <div className="rounded-lg ">
-                <Image
-                  src="/Frame 2865.png"
-                  width={500}
-                  height={500}
-                  alt="immage"
-                />
+              <div className="rounded-lg">
+                {mediaUrl !== '' ? (
+                  <img
+                    src={mediaUrl}
+                    width={500}
+                    height={100}
+                    alt="image"
+                    className="w-full rounded-xl h-[320px] object-cover"
+                  />
+                ) : (
+                  <img
+                    src="/Frame 2865.png"
+                    width={500}
+                    height={100}
+                    alt="fallback image"
+                    className="w-full rounded-xl h-[320px] object-cover"
+                  />
+                )}
               </div>
             ) : null}
             <p className="text-sm mt-2 ">
