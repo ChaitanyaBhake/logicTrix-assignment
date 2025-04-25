@@ -380,7 +380,7 @@ const WelcomeForm = () => {
             />
           </div>
 
-          <div className="relative ml-3 bg-white p-3 rounded-lg shadow-lg w-full">
+          <div className="relative bg-white p-3 rounded-lg shadow-lg w-full">
             {contentType === 'document' ? (
               <div className="flex flex-col items-center justify-center p-6 bg-blue-50 rounded-lg">
                 <div className="h-16 w-16 text-gray-400 mb-2">
